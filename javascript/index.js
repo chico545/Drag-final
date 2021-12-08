@@ -108,7 +108,6 @@ function miniChallenge() {
     miniChallengeScreen.createHeader("Mini-challenge!");
     miniChallengeScreen.createParagraph("", "Description");
     miniChallengeScreen.createHorizontalLine();
-    miniChallengeScreen.createBold("", "mcWinner");
     var challenge = new MiniChallenge();
     challenge.generateDescription();
     challenge.rankPerformances();
