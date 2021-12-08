@@ -920,23 +920,14 @@ function newEpisode() {
     topQueens = [];
     bottomQueens = [];
     top2 = [];
-    //queens remaining screen:
+    episodeCount++;
     var queensRemainingScreen = new Scene();
-    queensRemainingScreen.clean();
-    queensRemainingScreen.createHeader("Queens remaining...");
-    for (var i = 0; i < currentCast.length; i++) {
-        queensRemainingScreen.createBold(currentCast[i].getName());
-    }
-     //chaos season
-    if (chaos == true) {
+    if (episodeCount == 1 || premiereCounter <= 2 && (s12Premiere || porkchopPremiere || s6Premiere) || team) {
+        queensRemainingScreen.clean();
+        queensRemainingScreen.createHeader("Full cast");
         for (var i = 0; i < currentCast.length; i++) {
-            currentCast[i]._actingStat = randomNumber(0, 15);
-            currentCast[i]._comedyStat = randomNumber(0, 15);
-            currentCast[i]._danceStat = randomNumber(0, 15);
-            currentCast[i]._designStat = randomNumber(0, 15);
-            currentCast[i]._improvStat = randomNumber(0, 15);
-            currentCast[i]._lipsyncStat = randomNumber(0, 15);
-            currentCast[i]._runwayStat = randomNumber(0, 15);
+            queensRemainingScreen.createImage(currentCast[i].image);
+            queensRemainingScreen.createBold(currentCast[i].getName());
         }
     }
     else {
